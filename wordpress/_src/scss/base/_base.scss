@@ -1,0 +1,80 @@
+@charset "utf-8";
+@use 'config';
+:root {
+  overflow-y: scroll;
+  line-height: config.$root-line-height;
+  font-size: 18px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  -webkit-text-size-adjust: none;
+}
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-size: 14px;
+  color: config.$c-txt;
+  position: relative;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+  box-sizing: border-box;
+}
+a,
+:any-link {
+  text-decoration: none;
+}
+
+a {
+  display: inline-block;
+  vertical-align: top;
+  text-decoration: none;
+}
+@media #{config.$mq-pc}{
+  a[href^="tel:"] {
+    pointer-events: none;
+  }
+}
+
+img {
+  width: 100%;
+  vertical-align: top;
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+video {
+  filter: drop-shadow(0px 0px #000);
+}
+
+ul,ol {
+  list-style: none;
+}
+
+p{
+  line-height: 1.4;
+}
+
+@media #{config.$mq-tb} {
+  .for-tab {
+    display: none !important;
+  }
+}
+@media #{config.$mq-pc} {
+  .for-sp {
+    display: none !important;
+  }
+}
+@media #{config.$mq-sp} {
+  .for-pc {
+    display: none !important;
+  }
+  .for-tab {
+    display: none !important;
+  }
+}
+@media print {
+  .for-pc {
+    display: none !important;
+  }
+}
